@@ -434,3 +434,59 @@ return response;
 Reference : [Decorators](https://github.com/typeorm/typeorm/blob/master/docs/decorator-reference.md)
 
 //to be added
+
+
+
+
+## folder structure
+```
+project-root/
+├── src/
+│   ├── config/                 # Configuration files
+│   │   ├── app.config.ts       # Main application configurations
+│   │   ├── database.config.ts  # Database connection configurations
+│   │   └── ...                 # Other environment-specific configs
+│   │
+│   ├── common/                 # Shared utilities and interfaces
+│   │   ├── dto/                # Common Data Transfer Objects
+│   │   ├── entities/           # Common entities used across modules
+│   │   ├── filters/            # Custom exception filters
+│   │   ├── interceptors/       # Interceptors like logging, transformation
+│   │   ├── middleware/         # Common middleware
+│   │   ├── pipes/              # Validation pipes
+│   │   └── utils/              # Helper functions
+│   │
+│   ├── modules/                # All feature modules
+│   │   ├── user/               # Example feature module
+│   │   │   ├── user.controller.ts
+│   │   │   ├── user.service.ts
+│   │   │   ├── user.module.ts
+│   │   │   └── dto/            # DTOs for the user module
+│   │   │
+│   │   ├── auth/               # Authentication module
+│   │   ├── database/           # Database module (TypeORM, etc.)
+│   │   ├── cache/              # Caching module (Redis or in-memory)
+│   │   └── ...                 # Other feature modules
+│   │
+│   ├── main.ts                 # Entry point for the application
+│   ├── app.module.ts           # Root module
+│   └── grpc/                   # gRPC related files, if applicable
+│       └── proto/              # Protobuf files
+│
+├── test/                       # Test files
+│   ├── unit/                   # Unit tests
+│   ├── integration/            # Integration tests
+│   └── e2e/                    # End-to-end tests
+│
+├── .env                        # Environment variables
+├── .env.example                # Example environment variable file
+├── nest-cli.json               # Nest CLI configuration
+├── tsconfig.json               # TypeScript configuration
+├── tsconfig.build.json         # TypeScript build configuration
+├── Dockerfile                  # Docker configuration for containerization
+├── docker-compose.yml          # Docker compose file (optional)
+├── README.md                   # Project documentation
+├── .dockerignore               # Files to ignore for Docker
+├── .gitignore                  # Files to ignore in Git
+└── package.json                # Project dependencies and scripts
+```
